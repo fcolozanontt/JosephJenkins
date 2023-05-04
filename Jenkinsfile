@@ -13,13 +13,7 @@ pipeline {
 
         stage('Build'){
             steps{
-                echo 'Checkpoint 1'
-                bat 'cd src & javac -cp "lib\\junit-platform-console-standalone-1.7.0-all.jar" Car.java'
-                echo 'Checkpoint 2'
-                bat 'cd src & javac -cp "..\\lib\\junit-platform-console-standalone-1.7.0-all.jar" CarTest.java'
-                echo 'Checkpoint 3'
-                bat 'cd src & javac -cp "..\\lib\\junit-platform-console-standalone-1.7.0-all.jar" App.java'
-                echo 'Checkpoint 4'
+                bat 'cd src & javac -cp "lib\\junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
             }
         }
 
