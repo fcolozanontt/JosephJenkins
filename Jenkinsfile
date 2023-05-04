@@ -6,6 +6,7 @@ pipeline {
         stage('Checkout Codebase'){
             steps{
                 cleanWs()
+                bat 'dir /D'
             }
         }
 
