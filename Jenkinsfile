@@ -7,7 +7,7 @@ pipeline {
             steps{
                 cleanWs()
                 checkout scm: [$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs:
-                [[url: 'git@github.com:mnorm88/junit-automation.git']]]
+                [[url: 'https://github.com/fcolozanontt/JosephJenkins.git']]]
                 bat 'dir'
             }
         }
