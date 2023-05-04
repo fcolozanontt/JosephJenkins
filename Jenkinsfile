@@ -11,13 +11,17 @@ pipeline {
 
         stage('Build'){
             steps{
-                bat 'cd src & javac -cp "..\\lib\\junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
+                bat 'cd src'
+                bat 'javac -cp "..\\lib\\junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
+                bat 'cd ..'
             }
         }
 
         stage('Test'){
             steps{
-                bat 'cd src & java -jar ..\\lib\\junit-platform-console-standalone-1.7.0-all.jar -cp \".\" --select-class CarTest --reports-dir=\"reports\"'
+                bat 'cd src'
+                bat 'java -jar ..\\lib\\junit-platform-console-standalone-1.7.0-all.jar -cp \".\" --select-class CarTest --reports-dir=\"reports\"'
+                bat 'cd ..'
                 junit 'src/reports/*-jupiter.xml'
             }
         }
