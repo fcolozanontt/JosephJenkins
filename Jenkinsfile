@@ -6,7 +6,9 @@ pipeline {
         stage('Checkout Codebase'){
             steps{
                 cleanWs()
-                bat 'dir /D'
+                checkout scm: [$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs:
+                [[url: 'git@github.com:mnorm88/junit-automation.git']]]
+                bat 'dir'
             }
         }
 
