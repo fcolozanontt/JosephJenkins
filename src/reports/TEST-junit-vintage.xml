@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JUnit Vintage" tests="0" skipped="0" failures="0" errors="0" time="0.001" hostname="BCN-3R5S3J3" timestamp="2023-05-04T13:51:55">
+<testsuite name="JUnit Vintage" tests="0" skipped="0" failures="0" errors="0" time="0" hostname="BCN-3R5S3J3" timestamp="2023-05-05T08:43:55">
 <properties>
 <property name="file.encoding" value="Cp1252"/>
 <property name="file.separator" value="\"/>
