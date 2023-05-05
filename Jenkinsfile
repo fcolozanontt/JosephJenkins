@@ -8,21 +8,12 @@ pipeline {
                 cleanWs()
                 checkout scm: [$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs:
                 [[url: 'https://github.com/fcolozanontt/JosephJenkins.git']]]
-                echo 'Printing dir from src'
-                bat 'cd src'
-                bat 'dir'
-                bat 'cd ..'
-                echo 'Printing dir from lib'
-                bat 'cd lib'
-                bat 'dir'
-                bat 'cd ..'
             }
         }
 
         stage('Build'){
             steps{
-                bat 'cd src'
-                bat 'javac -cp "lib\\junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
+                bat 'cd src & javac -cp "..\\lib\\junit-platform-console-standalone-1.7.0-all.jar" CarTest.java Car.java App.java'
             }
         }
 
